@@ -24,6 +24,8 @@ actual_result = driver.find_element(By.XPATH, "//h1[@class='a-spacing-small']").
 
 assert expected_text == actual_result, f"Expected {expected_text} but got {actual_result}"
 
+assert driver.find_element(By.ID, "ap_email")
+
 sleep(4)
 
 # close the driver when done
