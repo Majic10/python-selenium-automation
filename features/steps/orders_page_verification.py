@@ -3,7 +3,7 @@ from behave import given, when, then
 from time import sleep
 
 
-@given("User is on the Amazon homepage")
+@given("User is on Amazon homepage")
 def open_amazon(context):
     context.driver.get("https://www.amazon.com")
 
@@ -20,5 +20,3 @@ def verify_signin(context):
     assert expected_text == actual_result, f"Expected {expected_text} but got {actual_result}"
     assert context.driver.find_element(By.ID, "ap_email")
     sleep(4)
-    # close the driver when done
-    context.driver.quit()

@@ -19,5 +19,3 @@ def verify_cart(context):
     actual_result = context.driver.find_element(By.CSS_SELECTOR, "div.sc-your-amazon-cart-is-empty").text
     assert expected_text == actual_result, f"Expected {expected_text} but got {actual_result}"
     sleep(4)
-    # close the driver when done
-    context.driver.quit()
