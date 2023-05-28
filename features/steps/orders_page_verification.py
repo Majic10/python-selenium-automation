@@ -19,4 +19,3 @@ def verify_signin(context):
     actual_result = context.driver.find_element(By.XPATH, "//h1[@class='a-spacing-small']").text
     assert expected_text == actual_result, f"Expected {expected_text} but got {actual_result}"
     assert context.driver.find_element(By.ID, "ap_email")
-    sleep(4)

@@ -3,9 +3,9 @@ from behave import given, when, then
 from time import sleep
 
 
-@given("User is on Amazon homepage")
-def open_amazon(context):
-    context.driver.get("https://www.amazon.com")
+# @given("User is on Amazon homepage")
+# def open_amazon(context):
+#     context.driver.get("https://www.amazon.com")
 
 
 @when("User navigates to the cart page")
