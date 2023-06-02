@@ -1,7 +1,6 @@
 from behave import given, when, then
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.wait import WebDriverWait
 
 SEARCH_BOX = (By.ID, "twotabsearchtextbox")
 PRODUCT_IMAGE = (By.XPATH, "//div[@data-component-type='s-search-result'][1]//img")
