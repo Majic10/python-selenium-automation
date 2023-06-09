@@ -1,5 +1,3 @@
-from email.mime import image
-
 from behave import given, when, then
 from selenium.webdriver.common.by import By
 from common_steps import step_given_amazon_homepage, step_when_search_for

@@ -1,21 +1,16 @@
 from selenium.webdriver.common.by import By
-from behave import given, when, then
-from time import sleep
+from behave import when, then
 
 
-# @given("User is on Amazon homepage")
-# def open_amazon(context):
-#     context.driver.get("https://www.amazon.com")
+CART_ICON = (By.ID, "nav-cart")
+CART_MESSAGE = (By.CSS_SELECTOR, "div.sc-your-amazon-cart-is-empty")
 
 
 @when("User navigates to the cart page")
 def open_cart_page(context):
-    context.driver.find_element(By.ID, "nav-cart").click()
+    context.app.base_page.click(*CART_ICON)
 
 
 @then("Cart page is displayed with no items in it")
 def verify_cart(context):
-    expected_text = "Your Amazon Cart is empty"
-    actual_result = context.driver.find_element(By.CSS_SELECTOR, "div.sc-your-amazon-cart-is-empty").text
-    assert expected_text == actual_result, f"Expected {expected_text} but got {actual_result}"
-    sleep(4)
+    context.app.base_page.verify_element_text('Your Amazon Cart is empty', *CART_MESSAGE)
