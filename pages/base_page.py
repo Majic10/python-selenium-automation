@@ -65,3 +65,8 @@ class Page:
 
     def verify_url_contains_query(self, query):
         self.wait.until(EC.url_contains(query))
+
+
+
+
+
